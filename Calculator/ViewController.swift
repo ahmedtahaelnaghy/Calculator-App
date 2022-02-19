@@ -90,9 +90,18 @@ class ViewController: UIViewController {
         
     }
     
+    // Button which delete one item
     @IBAction func deletItemBtn(_ sender: Any) {
         
-        resultLbl.text?.removeLast()
+        if resultLbl.text!.isEmpty {
+            
+            resultLbl.text = ""
+            
+        }else {
+            
+            resultLbl.text?.removeLast()
+            
+        }
         
     }
     
@@ -126,10 +135,18 @@ class ViewController: UIViewController {
         
     }
     
+    // button using to reach the precent of number
     @IBAction func precentBtn(_ sender: Any) {
         
-            resultLbl.text? = "\(Double(resultLbl.text!)! / 100)"
-
+        if resultLbl.text!.isEmpty {
+            
+            resultLbl.text = ""
+            
+        }else {
+        
+        resultLbl.text = "\(Double(resultLbl.text!)! / 100)"
+        
+        }
         
     }
     
