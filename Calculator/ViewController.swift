@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+        
     }
     
     @IBAction func numZeroBtn(_ sender: Any) {
@@ -78,12 +78,26 @@ class ViewController: UIViewController {
 
     }
     
+    // Burron which add dot with numbers
     @IBAction func pointBtn(_ sender: Any) {
         
-        resultLbl.text? += "."
+        if resultLbl.text?.contains(".") == true {
+            
+            return
+            
+        } else if resultLbl.text?.isEmpty == true {
+            
+            resultLbl.text = "0."
+            
+        } else {
+            
+            resultLbl.text? += "."
+            
+        }
         
     }
     
+    // Button that use to clear all item in result Lbl
     @IBAction func clearBtn(_ sender: Any) {
         
         resultLbl.text?.removeAll()
